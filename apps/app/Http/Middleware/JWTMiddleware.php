@@ -42,7 +42,6 @@ class JWTMiddleware
 			return $next($request);
 		}
 
-		return $next($request);
 		throw new \Exception('invalid token');
 
 		return $next($request);
