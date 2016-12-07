@@ -1,0 +1,34 @@
+#lock
+lock_nginx:
+    build: ./nginx
+    ports:
+        - 8700:80
+    links:
+        - lock_php
+    volumes_from:
+        - lock
+lock_php:
+    build: ./php/
+    expose:
+        - 9000
+    links:
+        - lock_mongo
+    volumes_from:
+        - lock
+#    command: sh /var/www/html/composer.sh
+lock:
+    image: php:7.0-fpm
+    volumes:
+        - ./apps:/var/www/html
+    command: "true"
+lock_mongo:
+    image: mongo:latest
+    expose:
+        - 27017
+    volumes_from:
+        - data
+data:
+    image: mongo:latest
+    volumes:
+        - ./database:/var/lib/mongo
+    command: "true"
