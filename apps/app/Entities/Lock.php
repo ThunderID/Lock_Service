@@ -137,6 +137,21 @@ class Lock extends BaseModel
 	}
 
 	/**
+	 * scope to get condition where owner
+	 *
+	 * @param string or array of owner
+	 **/
+	public function scopeOwnerType($query, $variable)
+	{
+		if(is_array($variable))
+		{
+			return 	$query->whereIn('owner.type', $variable);
+		}
+
+		return $query->where('owner.type', 'regexp', '/^'. preg_quote($variable) .'$/i');
+	}
+
+	/**
 	 * scope to get condition where pandora
 	 *
 	 * @param string or array of pandora

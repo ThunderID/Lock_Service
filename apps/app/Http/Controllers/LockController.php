@@ -51,17 +51,17 @@ class LockController extends Controller
 					case 'id':
 						$result		= $result->id($value);
 						break;
-					case 'title':
-						$result		= $result->title($value);
+					case 'pandoraid':
+						$result		= $result->pandoraid($value);
 						break;
-					case 'type':
-						$result		= $result->type($value);
-						break;
-					case 'writerid':
-						$result		= $result->writerid($value);
+					case 'pandoratype':
+						$result		= $result->pandoratype($value);
 						break;
 					case 'ownerid':
 						$result		= $result->ownerid($value);
+						break;
+					case 'ownertype':
+						$result		= $result->ownertype($value);
 						break;
 					default:
 						# code...
