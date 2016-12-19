@@ -19,7 +19,7 @@
 		//url-ify the data for the POST
 		$fields_string	= http_build_query($fields);
 
-		$url			= 'http://172.17.0.12/locks?'.$fields_string;
+		$url			= 'http://172.17.0.6/locks?'.$fields_string;
 
 		//open connection
 		$header[]		= "Authorization: ".$data['header']['token'];
