@@ -107,7 +107,7 @@ RUN sed -i \
 
 # Add Scripts
 ADD scripts/start.sh /start.sh
-ADD scripts/adaptor.sh /adaptor.sh
+#ADD scripts/adaptor.sh /adaptor.sh
 ADD scripts/pull /usr/bin/pull
 ADD scripts/push /usr/bin/push
 ADD scripts/letsencrypt-setup /usr/bin/letsencrypt-setup
@@ -134,4 +134,4 @@ EXPOSE 9113
 
 #CMD ["/usr/bin/supervisord", "-n", "-c",  "/etc/supervisord.conf"]
 CMD ["/start.sh"]
-CMD ["/adaptor.sh"]
+#CMD ["/adaptor.sh"]
